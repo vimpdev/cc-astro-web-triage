@@ -1,0 +1,20 @@
+---
+interface Props {
+  title: string;
+  category: string;
+  difficulty: "Junior" | "Intermediate";
+  featured?: boolean;
+}
+
+const { title, category, difficulty, featured = false } = Astro.props;
+---
+
+<article>
+  {featured && <strong>Featured</strong>}
+
+  <h2>{title}</h2>
+  <p>Category: {category}</p>
+  <p>Difficulty: {difficulty}</p>
+
+  <slot />
+</article>

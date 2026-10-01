@@ -1,5 +1,8 @@
 ---
-
+const title = "Web Triage";
+const description = "Front-end Diagnotic Lab";
+const cases = ["Layout Shift", "Broken Image", "TypeScript Props Error"];
+const showCases = true;
 ---
 
 <html lang="en">
@@ -9,9 +12,22 @@
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{title}</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<h1>{title}</h1>
+		<p>{description}</p>
+
+		{
+			showCases && (
+				<ul>
+					{cases.map((item) => (
+						<li>{item}</li>
+					))}
+				</ul>
+			)
+		}
+
+		<p>{cases.length} cases available</p>
 	</body>
 </html>

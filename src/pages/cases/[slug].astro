@@ -1,0 +1,20 @@
+---
+export function getStaticPaths() {
+  return [{ params: { slug: "broken-image" } }];
+}
+
+const { slug } = Astro.params;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Case</title>
+  </head>
+  <body>
+    <h1>Web Triage</h1>
+    <p>Slug: {slug}</p>
+  </body>
+</html>
